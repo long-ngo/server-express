@@ -1,0 +1,20 @@
+extends ../layouts/common
+
+block content
+    h1 User
+    form(action="/users/search", method="get")
+        input(type="text", name="q")
+        button search
+    table.table
+        thead
+            tr
+                th(scope='col') Name
+                th(scope='col') Phone
+                th(scope='col') Actions
+        tbody
+            each item in users
+                tr
+                    td(scope='row')= item.name
+                    td= item.phone
+                    td
+                        a(href="/users/" + item.id) view
