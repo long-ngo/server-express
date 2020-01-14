@@ -1,10 +1,9 @@
 const express = require('express');
 const controller = require('../controllers/user.controller')
 const validate = require('../validate/user.validate')
+const router = express.Router();
 
-var router = express.Router();
-
-router.get('/', controller.index);
+router.get('/', controller.user);
 
 router.get('/cookie', function (req, res) {
     res.cookie('user-id', 123);
