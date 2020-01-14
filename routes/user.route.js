@@ -5,6 +5,11 @@ const validate = require('../validate/user.validate')
 var router = express.Router();
 
 router.get('/', controller.index);
+
+router.get('/cookie', function (req, res) {
+    res.cookie('user-id', 123);
+    res.send('hello');
+});
   
 router.get('/search', controller.search);
 
