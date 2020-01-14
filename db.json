@@ -1,29 +1,11 @@
 {
   "users": [
     {
-      "name": "nữ",
+      "name": "master",
       "phone": "123456",
-      "id": "mBDpyqEi"
-    },
-    {
-      "name": "ngọc huế",
-      "phone": "039455445",
-      "id": "U1f1GEt_"
-    },
-    {
-      "name": "abc",
-      "phone": "123",
-      "id": "fNCUZZd2"
-    },
-    {
-      "name": "thành công",
-      "phone": "0455445445",
-      "id": "-5nFFgQK"
-    },
-    {
-      "name": "ngọc nữ",
-      "phone": "124545464",
-      "id": "7x2u2gfd"
+      "id": "mBDpyqEi",
+      "email": "admin@gmail.com",
+      "passworld": "root"
     }
   ]
 }
