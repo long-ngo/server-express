@@ -1,0 +1,12 @@
+extends ../layouts/common
+
+block content
+    h1 Login
+    form(action="/users/create", method="post")
+        .form-group
+            label(for="email") Email
+            input#email.form-control(type="text", name="email", value= value ? value.name : "")
+        .form-group
+            label(for="password") Phone
+            input#password.form-control(type="text", name="password", value= value ? value.phone : "")
+        button.btn.btn-primary Login

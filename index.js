@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 
 const mainRoute = require('./routes/main.route');
 const userRoute = require('./routes/user.route');
+const authRoute = require('./routes/auth.route');
 
 const app = express();
 const port = 3000;
@@ -18,10 +19,7 @@ app.use(cookieParser());
 
 app.use('/', mainRoute);
 app.use('/users', userRoute);
-
-app.get('/auth/login', function (req, res) {
-  res.send('trang đăng nhập');
-});
+app.use('/auth', authRoute);
 
 app.listen(port, function() {
     console.log(`server listen on port ${port}`);
