@@ -2,10 +2,10 @@
   "users": [
     {
       "name": "master",
-      "phone": "123456",
+      "phone": "0396664254",
       "id": "mBDpyqEi",
       "email": "admin@gmail.com",
-      "passworld": "root"
+      "password": "123456"
     }
   ]
 }
