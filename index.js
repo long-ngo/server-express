@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');//database
 const cookieParser = require('cookie-parser');
 
-const mainRoute = require('./routes/main.route');
+const indexRoute = require('./routes/index.route');
 const userRoute = require('./routes/user.route');
 const authRoute = require('./routes/auth.route');
 
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));//database
 app.use(express.static('public'));//database
 app.use(cookieParser());
 
-app.use('/', mainRoute);
+app.use('/', indexRoute);
 app.use('/users', userRoute);
 app.use('/auth', authRoute);
 
