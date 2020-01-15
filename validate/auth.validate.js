@@ -21,5 +21,6 @@ module.exports.postLogin = function (req, res, next) {
         return;
     }
 
+    res.cookie('userId', user.id);
     next();
 }

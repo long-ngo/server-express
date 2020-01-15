@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const indexRoute = require('./routes/index.route');
 const userRoute = require('./routes/user.route');
 const authRoute = require('./routes/auth.route');
+const middlewareAuth = require('./middleware/auth.middleware');
 
 const app = express();
 const port = 3000;
@@ -18,7 +19,7 @@ app.use(express.static('public'));//database
 app.use(cookieParser());
 
 app.use('/', indexRoute);
-app.use('/users', userRoute);
+app.use('/users', middlewareAuth.requireAuth, userRoute);
 app.use('/auth', authRoute);
 
 app.listen(port, function() {
