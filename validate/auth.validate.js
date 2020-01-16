@@ -1,10 +1,10 @@
+const md5 = require('md5');
 const db = require('../db');
 
 module.exports.postLogin = function (req, res, next) {
     var email = req.body.email;
-    var password = req.body.password;
+    var password = md5(req.body.password);//mã hóa mật khẩu
     var user = db.get('users').find({email: email}).value();
-
     var error = '';
     
     if (!user) {
