@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');//database
 const cookieParser = require('cookie-parser');
@@ -16,7 +17,7 @@ app.set('views', './views');
 app.use(bodyParser.json());//database
 app.use(bodyParser.urlencoded({extended: true}));//database
 app.use(express.static('public'));//database
-app.use(cookieParser('abcd'));
+app.use(cookieParser(process.env.SESSION_SECRET));
 
 app.use('/', indexRoute);
 app.use('/users', middlewareAuth.requireAuth, userRoute);
