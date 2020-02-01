@@ -9,7 +9,3 @@ module.exports.index = function (req, res) {
         products: db.get('products').value().slice(begin, end)
     });
 }
-
-// module.exports.postIndex = function (req, res) {
-//     console.log(req.query);
-// }

@@ -1,5 +1,6 @@
+const shortid = require('shortid');
+
 const db = require('../db');
-const shortid = require('shortid');//tạo id ngẫu nhiên
 
 module.exports.user = function(req, res) {
     res.render('users/index', {
@@ -13,19 +14,20 @@ module.exports.search = function (req, res) {
     var matchUsers = users.filter(function (user) {
         return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     });
+
     res.render('users/index', {
         users: matchUsers
     });
 }
 
 module.exports.create = function (req, res) {
-    //console.log(req.cookies);
     res.render('users/create');
 }
 
 module.exports.get = function (req, res) {
     var id = req.params.id
     var user = db.get('users').find({id: id}).value();
+
     res.render('users/infor', {
         user: user
     });
@@ -33,6 +35,8 @@ module.exports.get = function (req, res) {
 
 module.exports.postCreate = function (req, res) {
     req.body.id = shortid.generate();
+    req.body.avatar = req.file.path.split('\\').slice(1).join('\\');
+
     db.get('users').push(req.body).write();
     res.redirect('/users');
 }

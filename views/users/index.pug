@@ -8,13 +8,16 @@ block content
     table.table
         thead
             tr
+                th Avatar
                 th(scope='col') Name
                 th(scope='col') Phone
                 th(scope='col') Actions
         tbody
-            each item in users
+            each user in users
                 tr
-                    td(scope='row')= item.name
-                    td= item.phone
                     td
-                        a(href="/users/" + item.id) view
+                        img(src=user.avatar, width='80' height='80', class='rounded-circle')
+                    td(scope='row')= user.name
+                    td= user.phone
+                    td
+                        a(href="/users/" + user.id) view
