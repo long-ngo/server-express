@@ -237,5 +237,13 @@
       "price": 63,
       "image": "https://salt.tikicdn.com/cache/w1200/ts/product/ec/78/8b/f2df6f0ae0494118caafd984f9f324e9.jpg"
     }
+  ],
+  "sessions": [
+    {
+      "id": "_4hnbcz1",
+      "cart": {
+        "422406d4-8e85-4ce2-8be8-8aa4fc29c80a": 1
+      }
+    }
   ]
 }
