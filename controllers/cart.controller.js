@@ -19,5 +19,7 @@ module.exports.addToCart = function (req, res) {
       .set('cart.' + productId, count + 1)
       .write();
 
-    res.render('cart/index');
+    res.redirect('/products');
+
+    res.locals.num = 12;
 }

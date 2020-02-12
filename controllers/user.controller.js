@@ -11,6 +11,7 @@ module.exports.user = function(req, res) {
 module.exports.search = function (req, res) {
     var q = req.query.q;
     var users = db.get('users').value();
+
     var matchUsers = users.filter(function (user) {
         return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     });
